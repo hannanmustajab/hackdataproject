@@ -10,54 +10,62 @@
     <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid">
-            <h1 class="mt-4">Dashboard</h1>
-            <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Dashboard</li>
-            </ol>
-            <div class="row">
-                <div class="col-xl-3 col-md-6">
-                    <div class="card bg-primary text-white mb-4">
-                        <div class="card-body">Primary Card</div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="#">View Details</a>
-                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        <h1 class="mt-4">Dashboard</h1>
+            <hr>
+
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">Temperature
+                                        <p class="card-text" style="font-size: 40px; font-weight: 100;">28°C</p>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="btn btn-dark" href="#" style="border-radius: 10px; color:white; font-size: 30px; font-weight: 200;">Get Reading</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-warning text-white mb-4">
+                                    <div class="card-body">Battery
+                                      <p class="card-text" style="font-size: 40px; font-weight: 100;">3.5 volts</p>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="btn btn-danger" href="#" style="border-radius: 10px; color:white; font-size: 30px; font-weight: 200;">Low Power</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-success text-white mb-4">
+                                    <div class="card-body"><b>Battery-Temperature</b>
+                                        <p class="card-text" style="font-size: 40px; font-weight: 100;">30°C</p>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="btn btn-info" href="#" style="border-radius: 10px; color:white; font-size: 30px; font-weight: 200;"><b>Current Value</b></a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-danger text-white mb-4">
+                                    <div class="card-body">Light Intensity
+                                        <p class="card-text" style="font-size: 40px; font-weight: 100;">900 candela</p>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="btn btn-secondary" href="#" style="border-radius: 10px; color:white; font-size: 30px; font-weight: 200;">Get Report</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="card bg-warning text-white mb-4">
-                        <div class="card-body">Warning Card</div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="#">View Details</a>
-                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="card bg-success text-white mb-4">
-                        <div class="card-body">Success Card</div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="#">View Details</a>
-                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="card bg-danger text-white mb-4">
-                        <div class="card-body">Danger Card</div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="#">View Details</a>
-                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <div class="row">
                 <div class="col-xl-6">
                     <div class="card mb-4">
-                        <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Area Chart Example</div>
+                        <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Temperature vs Time</div>
                         <div class="card-body">
-                            <div class="chart" id="bargraph">
+                            <div class="chart col-lg-12" id="bargraph">
                                 <script>
                                     var graphs = {{graph | safe}};
                                     Plotly.plot('bargraph', graphs, {});

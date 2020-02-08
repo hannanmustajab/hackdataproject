@@ -11,12 +11,13 @@ def create_plot():
     df = pd.read_csv('data_set.csv')
     df = df.drop('context', axis=1)
     df = df[df['value'] > 0]
-    data = [
-        go.Scatter(
-            x=df['human_readable_date'], # assign x as the dataframe column 'x'
-            y=df['value']
-        )
-    ]
+    data = go.Figure([go.Scatter(x=df['human_readable_date'], y=df['value'], name="AAPL High",
+                line_color='deepskyblue',
+                opacity=0.8)])
+    data.update_layout(title_text='Temperature Values with Reading',
+                  xaxis_rangeslider_visible=True)
+
+
 
     graphJSON = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
 
